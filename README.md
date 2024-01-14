@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# [시간 경과에 따른 STACK-UP 내역]
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+| [**[240113]** ELECTRON 설치 및 React 프로젝트에 장착 실행 테스트 - 성공](##1.-ELECTRON-설치-및-실행-테스트) |
+| ------------------------------------------------------------ |
+|                                                              |
 
-## Available Scripts
 
-In the project directory, you can run:
 
-### `npm start`
+## 1. ELECTRON 설치 및 실행 테스트
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+ELECTRON 장착을 위해 필요한 플러그 인을 설치, 동시 및 순차 실행을 위해 concurrently 모듈과 wait-on 모듈을 둘 다 설치 해야한다. 
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```xml
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "concurrently": "^8.2.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-scripts": "5.0.1",
+    "wait-on": "^7.2.0",
+    "web-vitals": "^2.1.4"
+  },
+```
 
-### `npm test`
+더해서 package.json에서 실행 명령어를 추가해야한다. 찾아본 블로그 예시들에서는 Electron 환경만 테스트 하기 위해 npm start의 내부 명령어를 바꾸었지만 난 웹 환경 테스트랑 데스크톱 환경 테스트 따로 놔두는게 마음이 편해서 명령어를 전부 따로 따로 작성하였다. 하지만 일렉트론을 개발 단계에서 테스트 하기 위해서는 web 환경으로 테스트 하고 있는 React를 바라봐야 한다. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<img src=".\GithubImages\Drawing Logic-27.jpg" alt="Drawing Logic-27" style="zoom: 25%;" align="left" />
 
-### `npm run build`
+설명 잘 못하겠는데 요런 식이다. 여튼 내 코드 확인 바라고, 조만간 블로그에 정리해서 여기에 링크 올리겠다.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<img src=".\GithubImages\logic1.PNG" alt="logic1" style="zoom:60%;" />
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+성공화면 => Web이 아닌 APP 환경에서 띄웠다. 
